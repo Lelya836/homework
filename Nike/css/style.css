@@ -1,0 +1,2052 @@
+@import "fonts.css";
+@import "reset.css";
+
+:root {
+    --accent-color: #BA0000;
+    --main-color: #000;
+    --text-color: #fff;
+    --elements-color: #fff;
+
+    --transition: all .4s;
+}
+
+.body {
+    background: var(--main-color);
+
+    font-family: 'Futura Bk BT';
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1310px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+}
+
+.main {
+    background: url(../img/decor/decor-line-main.png)0% 72% / cover no-repeat;
+}
+
+/* .section-group{
+    background: url(../img/decor/decor-line-main.png)0% 72% / cover no-repeat;
+    
+    margin: -170px;
+    overflow: 170px;
+    min-height: 100%;
+    width: 100%;
+} */
+
+.main__about {
+    margin: 170px 0 212px;
+}
+
+.main__bestseller,
+.main__showcase,
+.main__modern-shoes,
+.main__atoms-shoes,
+.main__visionaries {
+    margin-bottom: 160px;
+}
+
+.title {
+    color: var(--text-color);
+    font-family: "Futura Md BT";
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.button {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: 1px solid var(--elements-color);
+    border-radius: 36px;
+
+    color: var(--text-color);
+    font-family: "Futura Bk BT";
+    font-size: 16px;
+    padding: 16px 24px;
+    height: 48px;
+
+    transition: var(--transition);
+}
+
+.button:hover {
+    box-shadow: 0px 5px 10px 2px #ffffff33;
+}
+
+.button::after {
+    content: url(../img/icons/button-arrow.svg);
+    margin-left: 8px;
+}
+
+/* ========================================================= */
+.header {
+    /* background: url("../img/decor/bg-header.jpg") 50% 100% / cover no-repeat; */
+
+
+}
+
+.header__inner {
+    display: grid;
+    grid-template: "left center right" 1fr / 1fr auto 1fr;
+    gap: 15px;
+    margin: 40px 40px 34px;
+}
+
+.header__menu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    align-content: center;
+    position: relative;
+}
+
+.burger-icon {
+    width: 40px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 101;
+}
+
+.burger-icon span,
+.burger-icon span::after,
+.burger-icon span::before {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--text-color);
+    transition: var(--transition);
+}
+
+.burger-icon span {
+    position: relative;
+}
+
+.burger-icon span::after,
+.burger-icon span::before {
+    content: '';
+    position: absolute;
+}
+
+.burger-icon span::after {
+    top: -6px;
+}
+
+.burger-icon span::before {
+    bottom: -6px;
+}
+
+.body--opened-menu .burger-icon span {
+    background: transparent;
+}
+
+.body--opened-menu .burger-icon span::after {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.body--opened-menu .burger-icon span::before {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.burger-nav {
+    background: #000000f8;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    overflow-y: auto;
+    height: 100vh;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+
+    padding: 30px 45px;
+    box-sizing: border-box;
+}
+
+.body--opened-menu .burger-nav {
+    transform: translateX(0%);
+    opacity: 1;
+    visibility: visible;
+
+}
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.burger-nav__menu {
+    margin-top: 100px;
+    margin-left: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    max-width: 1400px;
+    padding-bottom: 100px;
+    min-height: calc(100vh - 200px); 
+}
+
+.burger-nav__menu-item {}
+
+.burger-nav__menu-item--extended {
+
+    grid-row: span 2;
+}
+
+.burger-nav__menu-title {
+
+    font-family: "Futura XBlkCnIt BT";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.burger-nav__list {
+
+    font-family: "Futura LtCn BT";
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.burger-nav__list li {
+    margin-bottom: 16px;
+}
+
+.burger-nav__list li:last-child {
+    margin-bottom: 0px;
+}
+
+.burger-nav__item {}
+
+.burger-nav__link {}
+
+
+.nav__list {
+    display: flex;
+    gap: 23px;
+}
+
+.nav__item {}
+
+.nav__link {
+    display: block;
+    padding: 7px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.nav__link::before {
+    position: absolute;
+    content: '';
+    top: -42px;
+    width: 100%;
+    height: 8px;
+    background: var(--accent-color);
+    z-index: -1;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.nav__link:hover::before {
+    opacity: 1;
+}
+
+.header__logo {
+    width: 80px;
+    /* height: 0; */
+}
+
+.header__logo img {
+    width: 100%;
+}
+
+.controls__list {
+    display: flex;
+    gap: 40px;
+    justify-content: flex-end;
+}
+
+.controls__item {}
+
+.controls__link {}
+
+/* ==================== widget-360 ===================================== */
+
+.widget-360 {
+    background: url("../img/decor/decor-line.svg") 50% 100% / cover no-repeat;
+}
+
+.widget__body {
+    padding-top: 90px;
+    padding-bottom: 120px;
+    display: grid;
+    position: relative;
+
+    grid-template-columns: 156px 1fr .9fr;
+
+}
+
+.widget__bg-text {
+    font-family: "Futura-Black";
+    font-size: 128px;
+    font-weight: 700;
+    line-height: 128px;
+
+    background: linear-gradient(180.00deg, #ffffff1a, #ffffff00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    position: absolute;
+    z-index: -1;
+    /* justify-self: center; */
+    /* align-self: center; */
+    margin: 65px;
+    margin-left: 5%;
+
+}
+
+.widget__color {
+    align-self: center;
+}
+
+.widget__color img {
+    width: 100%;
+}
+
+.widget__content {
+    max-width: 560px;
+    align-self: end;
+    justify-self: center;
+}
+
+.widget__content>img {
+    width: 100%;
+    transform: rotate(-15.54deg);
+    margin-left: 15px;
+    transform-origin: left bottom;
+
+}
+
+.widget__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.widget__controls>img {
+    width: 100%;
+}
+
+.widget__product-information {
+    margin: 20px 9%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.widget__product-title {
+    font-family: "Futura Md BT";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 7px;
+    font-style: italic;
+    text-align: left;
+}
+
+.widget__product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* max-width: 426px; */
+}
+
+
+.widget__price {
+    font-family: "Futura Hv BT";
+    font-size: 36px;
+    margin-right: 20px;
+}
+
+.widget__size {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.widget__price {
+    margin-right: 19px;
+}
+
+
+.widget__size button {
+    margin-left: 15px;
+}
+
+.widget__size-select {
+    appearance: none;
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: "Futura Hv BT";
+    font-size: 36px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    /* Фоновая стрелка */
+    background-image: url("../img/icons/360/Arrow-drop-down2.svg");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 15px;
+    padding-right: 36px;
+}
+
+.widget__size option {
+    background: var(--main-color);
+    color: white;
+    font-size: 28px;
+    padding: 10px;
+    text-align: center;
+}
+
+.widget__size option:hover {
+    background: var(--main-color);
+    color: white;
+    font-size: 28px;
+    padding: 10px;
+    text-align: center;
+}
+
+.widget__button {
+    font-size: 12px;
+    padding: 6px 16px;
+    height: 36px;
+}
+
+.widget__swiper {
+    overflow: hidden;
+    padding: 60px 40px 0;
+
+}
+
+.widget__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.widget__row-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 1400px;
+    gap: 3vw;
+}
+
+.widget__cards {
+    border: 2px solid var(--elements-color);
+    padding: 32px;
+    height: 195px;
+    min-width: 280px;
+    max-width: 360px;
+    position: relative;
+
+}
+
+.widget__cards img {
+    width: 80%;
+    max-width: 245px;
+
+    position: absolute;
+    left: 50%;
+    bottom: 60%;
+    transform: translate(-50%, 0%);
+}
+
+.widget__cards-model {
+    margin-top: 93px;
+    font-family: "Futura LtCn BT";
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 0px;
+    text-transform: uppercase;
+}
+
+.widget__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 44px;
+    margin: 0 auto;
+    z-index: 11;
+
+}
+
+.widget__prev {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.widget__prev::before {
+    content: url(../img/icons/left-arrow.svg);
+    margin: 8px;
+}
+
+.widget__next {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.widget__next::after {
+    content: url(../img/icons/right-arrow.svg);
+    padding: 8px;
+}
+
+.labels {
+    font-family: "Futura XBlkIt BT";
+    font-size: 32px;
+    letter-spacing: 32px;
+    word-spacing: 7vw;
+    position: relative;
+    height: 7vw;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    margin-top: -50px;
+}
+
+.label {
+    margin-top: 1.5vw;
+    padding: 1.5vw 0;
+    white-space: nowrap;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+.label-red {
+    background: var(--accent-color);
+    transform: rotate(-1.91deg);
+}
+
+.label-black {
+    background: var(--main-color);
+    transform: rotate(2.92deg);
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+}
+
+.label-red .marquee-content {
+    animation-direction: normal;
+}
+
+.label-black .marquee-content {
+    animation-direction: reverse;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ========================================================= */
+.about {
+    position: relative;
+
+}
+
+
+.about__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin: 0 108px;
+    align-items: center;
+}
+
+.about::after {
+    position: absolute;
+    content: "";
+    background: url(../img/decor/sneakers2.png) 100% 100% / cover no-repeat;
+    transform: translate(-45%, 40%) rotate(32.64deg);
+    width: 746px;
+    height: 377px;
+    left: 0;
+    bottom: 0;
+    z-index: 11;
+}
+
+.about__title {
+    color: var(--text-color);
+    font-family: "Futura Md BT";
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 100px;
+    text-align: center;
+}
+
+.about__title span {
+    display: block;
+}
+
+.about__title>.first-line {
+    position: relative;
+    display: inline-block;
+}
+
+.about__title>.first-line::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    margin-left: 30px;
+    width: 72px;
+    height: 72px;
+    align-self: flex-end;
+
+    /* Множественные фоны - градиент поверх картинки */
+    background:
+        linear-gradient(-42.30deg,
+            rgba(0, 0, 0, 1),
+            rgba(187, 61, 61, 0.81) 52%,
+            rgba(186, 0, 0, 0.64) 100%),
+        url(../img/decor/girl.jpg);
+
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.about__title>.third-line::before {
+    content: "";
+    margin-right: 30px;
+    width: 72px;
+    height: 72px;
+    display: inline-block;
+
+    /* Множественные фоны - градиент поверх картинки */
+    background:
+        linear-gradient(-42.30deg,
+            rgba(0, 0, 0, 1),
+            rgba(187, 61, 61, 0.81) 52%,
+            rgba(186, 0, 0, 0.64) 100%),
+        url(../img/decor/sneakers.jpg);
+
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.text-container {
+    position: relative;
+    display: inline-block;
+    /* чтобы прямоугольник не обрезался */
+}
+
+.text-mask {
+    position: relative;
+    z-index: 2;
+}
+
+.text-container::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    top: 25%;
+    background: var(--accent-color);
+    transform: translate(0%, -50%) rotate(11.20deg);
+    mix-blend-mode: multiply;
+    opacity: 1;
+    z-index: 3;
+}
+
+.title {}
+
+.about__text {
+    line-height: 48px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.about__button {}
+
+/* ========================================================= */
+
+
+
+.bestseller {}
+
+.container {}
+
+.bestseller__title {
+    margin-bottom: 80px;
+}
+
+.bestseller__wrapper {
+    display: flex;
+    gap: 16px;
+}
+
+
+.bestseller__slide-link:hover .bestseller__slide-text {
+    color: var(--text-color)
+}
+
+.bestseller__slide-link {
+    flex: 1;
+}
+
+.bestseller__slide {
+    position: relative;
+    width: 100%;
+    /* Занимает всю доступную ширину */
+    aspect-ratio: 416 / 560;
+    /* Сохраняем пропорции 416:560 */
+    max-width: 416px;
+    z-index: 1;
+    display: flex;
+}
+
+.bestseller__slide-media {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-right: -100%;
+}
+
+.bestseller__slide-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.bestseller__slide-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 8px;
+    z-index: 1;
+}
+
+.bestseller__slide-text {
+    font-family: "Futura Md BT";
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: 0%;
+    text-align: right;
+    font-weight: bold;
+    font-style: italic;
+
+    -webkit-text-stroke: 1px var(--text-color);
+    color: transparent;
+
+
+    transition: var(--transition);
+}
+
+/* ========================================================= */
+
+.main__showcase {}
+
+.showcase {}
+
+.showcase__title2 {
+    padding: 15px;
+    justify-self: center;
+    width: 100%;
+    max-width: 480px;
+}
+
+.showcase__title2 img {
+    width: 100%;
+}
+
+.showcase__title {
+    font-family: "Futura XBlkCnIt BT";
+    font-size: 96px;
+    font-style: italic;
+    transform: rotate(-10.67deg);
+    margin-bottom: 120px;
+}
+
+.text-container--checkers {
+    position: relative;
+    display: inline-block;
+    /* чтобы прямоугольник не обрезался */
+
+}
+
+.text-container--checkers::before {
+    content: "";
+    position: absolute;
+    width: 237.39px;
+    height: 78.72px;
+    top: 25%;
+    background: url(../img/decor/decor.png);
+    transform: translate(0%, 0%) rotate(330deg);
+    mix-blend-mode: multiply;
+    opacity: 1;
+    z-index: 3;
+}
+
+.text-mask--checkers {
+    color: var(--text-color);
+    position: relative;
+    z-index: 2;
+}
+
+.text-transparent {
+    -webkit-text-stroke: 1px var(--text-color);
+    color: transparent;
+    position: relative;
+    top: 65px;
+    left: -100px;
+
+}
+
+.showcase__table-cases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3,1fr); */
+    gap: 51px 47px;
+    align-items: end;
+    margin: 121px 0;
+}
+
+.showcase__case {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.showcase__case-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.showcase__case-object {
+    display: block;
+    width: 80%;
+    z-index: 2;
+    filter: drop-shadow(0px 10px 9px #00000040);
+}
+
+.showcase__case-stand {
+    margin-top: -5%;
+    width: 100%;
+}
+
+.showcase__case-model {
+    font-family: "Futura LtCn BT";
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 100%;
+    text-transform: capitalize;
+    height: 48px;
+}
+
+.showcase__button {
+    justify-self: center;
+}
+
+/* ========================================================= */
+.main__modern-shoes {}
+
+.modern-shoes {}
+
+.modern-shoes__wrapper {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    gap: 132px;
+}
+
+.modern-shoes__img {
+    position: relative;
+    width: 357px;
+    justify-self: center;
+}
+
+.modern-shoes__img-bg {
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    /* background: rgba(255, 255, 255, 0.6); */
+    background: radial-gradient(circle at center, rgba(135, 0, 0, 0.6), rgba(67, 0, 0, 0.6));
+    z-index: -1;
+    /* margin: 43px 29px 14px; */
+
+}
+
+.modern-shoes__img-bg::after {
+    position: absolute;
+    content: "";
+    width: 357px;
+    height: 357px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 111px;
+    filter: blur(250px);
+    background: conic-gradient(from 8.67deg at 47% 52%, rgba(186, 0, 0, 1) 0deg, rgba(186, 0, 0, 1) 0deg, rgba(186, 0, 0, 1) 360deg, rgba(186, 0, 0, 1) 360deg);
+    mix-blend-mode: multiply;
+    z-index: -2;
+}
+
+.modern-shoes__img>img {
+    width: 110%;
+    margin-top: 43px;
+    z-index: 10;
+    transform: rotate(9.69deg);
+    border-radius: 10px;
+    filter: drop-shadow(0px 15px 20px #00000040);
+}
+
+.modern-shoes__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modern-shoes__content p {
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.modern-shoes__title {
+    text-align: left;
+    line-height: 100%;
+}
+
+.modern-shoes__button {}
+
+.modern-shoes__content-inner2 {
+    display: none;
+}
+
+/* ========================================================= */
+
+.favorite {}
+
+.favorite__title {
+    /* margin-bottom: 110px; */
+    text-align: left;
+}
+
+.favorite__title span {
+    color: var(--accent-color);
+}
+
+.span-accent {
+    position: relative;
+}
+
+.span-accent::after {
+    position: absolute;
+    content: "";
+    width: 140px;
+    height: 32px;
+    bottom: -15px;
+    left: 20px;
+
+    background: radial-gradient(50.00% 50.00% at 50% 50%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 100%);
+}
+
+.swiper {
+    margin-top: -80px;
+    padding: 200px 0;
+    overflow-y: visible;
+}
+
+.favorite__swiper {
+    display: flex;
+    gap: 80px;
+}
+
+.favorite__card-inner {
+    position: relative;
+    max-width: 313px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.favorite__card-inner::before {
+    position: absolute;
+    content: "";
+    /* Circle */
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(100px);
+    background: conic-gradient(from 180deg at 50% 50%, rgba(255, 0, 0, 0) 0deg, rgba(255, 0, 0, 1) 0deg, rgba(255, 0, 0, 0) 360deg, rgba(255, 0, 0, 1) 360deg);
+    /* background: conic-gradient(from 180deg at center, transparent 0deg, red 0deg, transparent 360deg, red 360deg); */
+    z-index: -1;
+}
+
+.favorite__card-info {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Futura XBlkCnIt BT";
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.favorite__card-name {
+    margin-bottom: 14px;
+}
+
+.favorite__card-price {
+    color: var(--accent-color);
+
+}
+
+.favorite__card-img {
+    margin-top: -20px;
+    margin-right: 70px;
+    width: 240px;
+
+}
+
+.favorite__card-img img {
+    width: 100%;
+
+}
+
+/* ========================================================= */
+
+.main__logos-carousel {
+    padding: 40px 0;
+}
+
+.logos-carousel {
+    overflow: hidden;
+    flex-wrap: nowrap;
+    display: flex;
+}
+
+.logos-carousel:hover .logos-carousel__wrapper {
+    animation-play-state: paused;
+}
+
+.logos-carousel__wrapper {
+    /* display: inline-block; */
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    animation: 35s slide infinite linear;
+}
+
+.logos-carousel__logo-img {
+    padding: 0 20px;
+}
+
+.logos-carousel__logo-img img {
+    width: 100px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+
+    }
+}
+
+/* ========================================================= */
+.main__atoms-shoes {
+    margin: 250px 0 277px;
+}
+
+.atoms-shoes__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.atoms-shoes__content {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-right: 60px;
+
+}
+
+.atoms-shoes__content p {
+    margin-bottom: 8px;
+    font-size: 24px;
+
+}
+
+.atoms-shoes__title {
+    text-align: left;
+    line-height: 100%;
+}
+
+.atoms-shoes__button {}
+
+.atoms-shoes__gallery {
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: .75fr 1fr;
+    grid-template-rows: .5fr 1fr;
+    gap: 40px 28px;
+    justify-items: end;
+    align-items: start;
+    position: relative;
+}
+
+.atoms-shoes__gallery::before {
+    position: absolute;
+    content: "";
+    /* Circle */
+    width: 455px;
+    height: 455px;
+    border-radius: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(180px);
+    background: conic-gradient(from 180deg at 50% 50%, rgba(186, 0, 0, 0.28) 0deg, rgba(186, 0, 0, 1) 0deg, rgba(186, 0, 0, 0.28) 360deg, rgba(186, 0, 0, 1) 360deg);
+    z-index: -1;
+}
+
+.atoms-shoes__gallery img {
+    border-radius: 10px;
+}
+
+.atoms-shoes__gallery-img1 {
+    grid-row: span 2;
+    margin-bottom: 108px;
+}
+
+.atoms-shoes__gallery-img2 {}
+
+.atoms-shoes__gallery-img3 {
+    margin-left: 60px;
+}
+
+/* ========================================================= */
+
+.main__visionaries {
+    margin-bottom: 287px;
+}
+
+.visionaries {}
+
+.visionaries__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.visionaries__img {}
+
+.visionaries__img--hidden {
+    display: none;
+}
+
+.visionaries__img img {
+    width: 100%;
+}
+
+.visionaries__content {
+    width: 50%;
+}
+
+.visionaries__title {
+    margin-bottom: 32px;
+
+}
+
+.visionaries__title span {
+    color: var(--accent-color);
+}
+
+.visionaries__title .text-mask {}
+
+
+.visionaries__subtitle {
+    margin-bottom: 32px;
+}
+
+.visionaries__content-inner {
+    margin-bottom: 32px;
+}
+
+.visionaries__content-inner p {
+    margin-bottom: 24px;
+}
+
+.visionaries__button {}
+
+.modern-shoes__button {}
+
+/* ========================================================= */
+
+.main__nikeclub {
+    margin-bottom: 300px;
+}
+
+.nikeclub {}
+
+.nikeclub__wrapper {
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 65px 40px;
+
+    box-sizing: border-box;
+    border: 1px solid var(--elements-color);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    position: relative;
+}
+
+.nikeclub__wrapper::after {
+    position: absolute;
+    content: "";
+    max-width: 798px;
+    max-height: 376px;
+    width: 798px;
+    height: 376px;
+    right: 0;
+    bottom: 0;
+    background: url(../img/decor/sneakers3.png);
+    transform: translate(50%, 50%);
+    z-index: 11;
+}
+
+.nikeclub__content {}
+
+.nikeclub__title {
+    color: var(--text-color);
+
+    font-family: "Futura Md BT";
+    font-size: 48px;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.nikeclub_subtitle {
+    color: var(--text-color);
+    font-family: "Futura Bk BT";
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: capitalize;
+
+    margin-bottom: 32px;
+}
+
+.nikeclub__button {}
+
+.nikeclub__img {
+    /* Logo */
+    width: 227px;
+    height: 90px;
+}
+
+.nikeclub__img img {
+    width: 100%;
+}
+
+/* ========================================================= */
+.advantages {}
+
+.advantages__wrapper {
+    margin: 57px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.advantages__col {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.advantages__col-icon {}
+
+.advantages__col-text {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.advantages__col-title {
+    margin-bottom: 8px;
+
+    font-family: "Futura Hv BT";
+}
+
+/* ========================================================= */
+
+.footer {}
+
+.footer__main-space {
+    margin: 72px 0 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.footer__left {}
+
+.footer__title {
+    font-family: "Futura LT";
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+    text-align: left;
+    text-transform: capitalize;
+
+    margin-bottom: 32px;
+}
+
+.footer__subscribe-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer__email-input {
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid var(--elements-color);
+    border-radius: 80px;
+    padding: 16px 152px 16px 25px;
+    height: 56px;
+    width: 100%;
+    max-width: 400px;
+    color: var(--text-color);
+
+    transition: var(--transition);
+
+}
+
+.footer__email-input:focus {
+    outline: none;
+    box-shadow: 0px 5px 10px 2px #ffffff33;
+}
+
+.footer__submit-button {
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 1);
+    font-family: "Futura LT";
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+
+    margin-left: -146px;
+    width: 146px;
+    height: 56px;
+    border: 1px solid var(--elements-color);
+    border-radius: 80px;
+    background: var(--elements-color);
+}
+
+.footer__logo {
+    margin-top: 88px;
+    max-width: 240px;
+}
+
+.footer__logo-image {
+    width: 100%;
+}
+
+.footer__menu {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+
+}
+
+.footer__menu-item {}
+
+.footer__menu-title {
+    font-family: "Futura XBlkCnIt BT";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.footer__menu-list {
+
+    font-family: "Futura LtCn BT";
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.footer__menu-list li {
+    margin-bottom: 16px;
+}
+
+.footer__menu-list li:last-child {
+    margin-bottom: 0px;
+}
+
+.footer__menu-item--extended {
+    grid-row: span 2;
+}
+
+.footer__bottom {
+    margin: 32px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__copy {
+    text-transform: capitalize;
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: end;
+    gap: 40px;
+}
+
+.footer__socials-item {}
+
+.footer__socials-icon {}
+
+
+/* ========================================================= */
+/* ========================================================= */
+/* ========================================================= */
+
+@media (max-width: 1200px) {
+    .widget__body {
+        padding-top: 90px;
+        padding-bottom: 50px;
+
+        grid-template-columns: .2fr 1fr .9fr;
+    }
+
+    .widget__bg-text {
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+
+    .widget__content {
+        max-width: 44vw;
+    }
+
+    .widget__product-information {
+        gap: 20px;
+    }
+
+    .widget__product-title {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    .labels {
+        font-size: 2.5vw;
+    }
+
+    /*-------------------*/
+    .about::after {
+        transform: translate(-25%, 40%);
+        width: 500px;
+    }
+
+    /*-------------------*/
+
+    .modern-shoes__wrapper {
+        gap: 60px;
+    }
+
+    /*-------------------*/
+    .atoms-shoes__gallery {
+        width: 50%;
+        gap: 40px 28px;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+
+    .atoms-shoes__gallery img {
+        width: 100%;
+    }
+
+
+    /*-------------------*/
+
+}
+
+@media (max-width: 1100px) {
+    .modern-shoes__img {
+        width: 300px;
+    }
+
+    /*-------------------*/
+    .logos-carousel__wrapper {
+        min-width: auto;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .main__about {
+        margin: 100px 0 130px;
+    }
+
+    .main__bestseller,
+    .main__visionaries {
+        margin-bottom: 130px;
+    }
+
+    .bestseller__title {
+        margin-bottom: 45px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    /*--*/
+
+    .widget__body {
+        padding-top: 50px;
+    }
+
+    .controls__list {
+        gap: 20px;
+    }
+
+    /*--*/
+
+    .widget__row {
+        margin: 15px;
+    }
+
+
+    /*-------------------*/
+    .about__wrapper {
+        margin: 0;
+        gap: 55px;
+    }
+
+    .about__title,
+    .bestseller__title {
+        font-size: 40px;
+        line-height: 65px;
+    }
+
+    .about__title>.first-line::after {
+        top: 15px;
+        margin-left: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .about__title>.third-line::before {
+        content: "";
+        margin-right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .text-container::before {
+        width: 150px;
+        height: 30px;
+        top: 27%;
+    }
+
+    .about__text {
+        line-height: 40px;
+    }
+
+    .about::after {
+        width: 350px;
+        height: 200px;
+    }
+
+    /*-------------------*/
+
+    .bestseller__wrapper {
+        gap: 10px;
+    }
+
+    .bestseller__slide-text {
+        font-size: 5vw;
+        line-height: 5vw;
+        -webkit-text-stroke-width: 0.5px;
+    }
+
+    /*-------------------*/
+    .advantages__wrapper {
+        margin: 57px 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    /*-------------------*/
+    .footer__main-space {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .footer__left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+}
+
+@media (max-width: 800px) {
+    .widget__bg-text {
+        margin: 65px 5%;
+
+        font-size: 14vw;
+        line-height: 14vw;
+    }
+
+    .widget__body {
+        grid-template-columns: 0.3fr 1fr;
+        padding-bottom: 0;
+    }
+
+    .widget__product-information {
+        grid-column: span 2;
+    }
+
+    .widget__content {
+        margin-top: 5%;
+        max-width: 80%;
+    }
+
+    .widget__product-title {
+        font-size: 5vw;
+        line-height: 5vw;
+    }
+
+    .widget__price,
+    .widget__size-select {
+        font-size: 25px;
+    }
+
+    .widget__row {
+        flex-direction: column-reverse;
+        gap: 25px;
+    }
+
+    .widget__swiper {
+        padding: 60px 0 0;
+    }
+
+    .widget__cards {
+        padding: 25px;
+        height: 160px;
+    }
+
+    .widget__nav {
+        margin-bottom: 50px;
+    }
+
+    /*-------------------*/
+    .about::after {
+        width: 0;
+        height: 0;
+    }
+
+    /*-------------------*/
+    .showcase__table-cases {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin: 70px 0;
+    }
+
+    .empty {
+        display: none;
+    }
+
+    .showcase__case-model {
+        font-size: 3vw;
+        height: 6vw;
+    }
+
+    /*-------------------*/
+    .modern-shoes__wrapper {
+        grid-template-columns: 200px 1fr;
+        gap: 45px;
+    }
+
+    .modern-shoes__img {
+        width: 200px;
+    }
+
+    .modern-shoes__img-bg {
+        width: 200px;
+        height: 200px;
+    }
+
+    .modern-shoes__title {
+        font-size: 52px;
+    }
+
+    .modern-shoes__content-inner {
+        display: none;
+    }
+
+    .modern-shoes__content-inner2 {
+
+        display: flex;
+        gap: 40px;
+        flex-direction: column;
+        grid-column: span 2;
+    }
+
+    /*-------------------*/
+    .atoms-shoes__content {
+        margin-right: 20px;
+    }
+
+    /*-------------------*/
+    .visionaries__img {
+        display: none;
+
+    }
+
+    .visionaries__img--hidden {
+        display: contents;
+        margin-bottom: 48px;
+    }
+
+    .visionaries__content {
+        width: 100%;
+    }
+
+    .visionaries__subtitle {
+        text-align: center;
+    }
+
+    .visionaries__subtitle {
+        margin-bottom: 0px;
+    }
+
+    /*-------------------*/
+    .nikeclub__wrapper {
+        flex-direction: column-reverse;
+    }
+
+    /*-------------------*/
+    .footer__subscribe-form {
+        width: 100%;
+    }
+
+    .footer__menu,
+    .burger-nav__menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .nikeclub__wrapper {
+        margin: 0 20px;
+        padding: 50px 30px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .widget__body {
+        grid-template-columns: 0.2fr 1fr;
+        padding-bottom: 0px;
+    }
+
+    .controls__list {
+        display: none;
+    }
+
+
+    .widget__nav {
+        width: 90vw;
+    }
+
+    .labels {
+        font-size: 16px;
+        padding: 10px 0;
+        overflow: visible;
+    }
+
+    .label {
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+
+    /*-------------------*/
+    .bestseller__wrapper {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .bestseller__slide {
+        max-width: none;
+    }
+
+    .bestseller__slide-text {
+        font-size: 90px;
+        line-height: normal;
+    }
+
+    /*-------------------*/
+    .atoms-shoes__gallery {
+        display: none;
+    }
+
+    .atoms-shoes__content {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    /*-------------------*/
+    .advantages__wrapper {
+        margin: 57px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+
+    .advantages__col-text {
+        font-size: 24px;
+    }
+
+    .advantages__col {
+        gap: 20px;
+    }
+
+    .advantages__col-title {
+        margin-bottom: 18px;
+    }
+
+    /*-------------------*/
+    .swiper {
+        margin-top: -150px;
+        padding: 225px 0 120px;
+    }
+
+    .favorite__card-inner::before {
+        width: 165px;
+        height: 190px;
+        filter: blur(70px);
+    }
+
+    /*-------------------*/
+    .main__atoms-shoes {
+        margin: 90px 0 130px;
+    }
+
+    /*-------------------*/
+    .main__nikeclub {
+        margin-bottom: 130px;
+    }
+
+    .nikeclub__wrapper::after {
+        width: 0;
+        height: 0;
+    }
+
+    /*-------------------*/
+    .footer__bottom {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 32px;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .widget__size button {
+        margin-left: -15px;
+    }
+
+    .widget__cards {
+
+        padding: 18px;
+        height: 150px;
+        min-width: 240px;
+    }
+
+    /*-------------------*/
+    .bestseller__slide-text {
+        font-size: 60px;
+        line-height: normal;
+    }
+
+    /*-------------------*/
+
+    .about__title,
+    .bestseller__title,
+    .modern-shoes__title,
+    .favorite__title,
+    .atoms-shoes__title,
+    .visionaries__title,
+    .nikeclub__title,
+    .footer__title    {
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    .about__wrapper {
+        gap: 36px;
+    }
+
+    .about__title>.first-line::after {
+        top: 10px;
+        margin-left: 15px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .about__title>.third-line::before {
+        width: 32px;
+        height: 32px;
+    }
+
+    .text-container::before {
+        width: 150px;
+        height: 25px;
+        top: 30%;
+    }
+
+    .about__text {
+        line-height: 32px;
+    }
+
+    /*-------------------*/
+    .showcase__table-cases {
+        grid-template-columns: 1fr;
+        margin: 50px 0;
+    }
+
+    .showcase__case-model {
+        font-size: 24px;
+        height: 6vw;
+    }
+
+    /*-------------------*/
+    .modern-shoes__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .modern-shoes__content-inner {
+        display: block;
+    }
+
+    .modern-shoes__content-inner2 {
+        display: none;
+    }
+
+    /*-------------------*/
+    .span-accent::after {
+            width: 80px;
+        height: 20px;
+        bottom: -10px;
+        left: 10px;
+}
+    /*-------------------*/
+
+    .main__logos-carousel {
+        margin-top: -100px;
+    }
+
+    /*-------------------*/
+    .footer__title {
+        text-align: center;
+    }
+
+    .footer__main-space {
+        align-items: start;
+    }
+
+    .footer__menu {
+        grid-template-columns: 1fr;
+        margin-left: 48px;
+    }
+    .burger-nav {
+        /* overflow: scroll; */
+    }
+
+    .burger-nav__menu {
+        grid-template-columns: 1fr;
+        /* margin-left: 48px; */
+
+    }
+
+    /*-------------------*/
+
+}
