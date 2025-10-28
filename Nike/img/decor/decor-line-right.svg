@@ -1,0 +1,24 @@
+<svg viewBox="0 0 821.561 5769.21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="821.560608" height="5769.207031" fill="none" customFrame="#000000">
+	<defs>
+		<linearGradient id="paint_custom_gradient_1">
+			<stop stop-color="rgb(255,255,255)" offset="0" stop-opacity="0.540000021" />
+			<stop stop-color="rgb(255,255,255)" offset="0.291666657" stop-opacity="0" />
+			<stop stop-color="rgb(255,255,255)" offset="0.557291687" stop-opacity="1" />
+			<stop stop-color="rgb(255,255,255)" offset="0.796875" stop-opacity="0" />
+			<stop stop-color="rgb(255,255,255)" offset="1" stop-opacity="0.620000005" />
+		</linearGradient>
+		<mask id="custom_gradient_clip_path_1">
+			<path id="Vector 4" stroke="rgb(255,255,255)" stroke-width="1" transform="matrix(-1,-2.31152e-16,2.31152e-16,-1,821.207,5768.85)" />
+		</mask>
+	</defs>
+	<g style="mix-blend-mode:lighten">
+		<path id="Vector 4" d="M0 5768.5L400.5 5368L400.5 3302.5L820.5 2882.5L271.5 2333.5L781.5 1823.5L781.5 700.5L81 0" stroke="rgb(0,0,0)" stroke-opacity="0" stroke-width="1" customGradient="url(#custom_gradient_1)" transform="matrix(-1,-2.31152e-16,2.31152e-16,-1,821.207,5768.85)" />
+		<g id="custom_gradient_1" opacity="0.400000006" angularGradient="url(#paint_custom_gradient_1); -331.758789 2651.640137 117.500000 2610.000000 410.250031 5768.500000" mask="url(#custom_gradient_clip_path_1)">
+			<g transform="matrix(-1,-2.31152e-16,2.31152e-16,-1,821.207,5768.85)">
+				<foreignObject width="820.500000" height="5768.500000" x="0.000000" y="0.000000">
+					<div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 174.704590deg at 117.500000px 2610.000000px, rgb(255,255,255) 0%, rgb(255,255,255) 42.233%, rgb(255,255,255) 50.8512%, rgb(255,255,255) 93.0218%, rgb(255,255,255) 100%, rgb(255,255,255) 100%);mask:conic-gradient(from 174.704590deg at 117.500000px 2610.000000px, rgba(255,255,255,0.54) 0%, rgba(255,255,255,0) 42.233%, rgba(255,255,255,1) 50.8512%, rgba(255,255,255,0) 93.0218%, rgba(255,255,255,0.62) 100%, rgba(255,255,255,0.54) 100%);width:100%;height:100%;" />
+				</foreignObject>
+			</g>
+		</g>
+	</g>
+</svg>
